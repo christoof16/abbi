@@ -30,7 +30,7 @@
         input[type="text"]{
             margin: 1rem;
             padding: 1rem;
-            width: 40rem;
+            width: 20rem;
             border: 2px solid v.$primario;
 
             @include m.tablet { 
@@ -79,7 +79,7 @@
         margin: 1rem 2rem;
         padding: 1rem;
         resize: none;
-        width: 40rem;
+        width: 20rem;
         height: 20rem;
         border: 2px solid v.$primario;
 
@@ -102,6 +102,8 @@
         cursor: pointer;
         font-weight: 700;
         text-transform: uppercase;
+        margin-left: 8rem;
+        margin-top: 1rem;
 
         &:hover{
             background-color: v.$secundario;
