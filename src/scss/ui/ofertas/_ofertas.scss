@@ -1,0 +1,110 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.ofertas{
+
+    &__heading{
+        text-align: center;
+        padding-top: 3rem;
+        margin-bottom: 1rem;
+
+        span{
+            font-family: v.$fuente_secundaria;
+            font-weight: 400;
+            color: v.$secundario;
+            font-size: 4.8rem;
+        }
+    }
+
+    &__contenido{
+        @include m.grid(1,3rem);
+
+        @include m.tablet { 
+            @include m.grid(3,3rem) 
+        }
+
+        @include m.desktop { 
+            @include m.grid(4,3rem);
+        }
+    }
+
+    &__grid{
+        background-color: v.$grisClaro;
+        border-radius: 1rem;
+        margin-bottom: 5rem;
+        transition: transform .3s;
+        border: 2px solid darken(v.$blanco, 10%);
+
+        &:hover{
+            background-color: darken(v.$grisClaro, 10%);
+            border: 2px solid darken(v.$blanco, 20%);
+            transform: scale(1.1); 
+        }
+    }
+}
+
+.info{
+
+    margin-bottom: 5rem;
+    padding-top: 10rem;
+    padding-left: 10rem;
+    border-top: 2px solid v.$grisClaro;
+
+    @include m.tablet { 
+        padding-left: 0;
+    }
+
+    &__lenguaje{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__curso{
+        line-height: 1;
+        width: 15rem;
+    }
+
+    &__materia{
+        width: 10rem;
+        height: 10rem;
+    }
+
+    &__instructor{
+        background-image: url(../img/maestro.jpg);
+        background-size: cover;
+        background-position: center;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+    }
+
+    &__instructor--instructor2{
+        background-image: unset;
+        background-image: url(../img/maestro2.jpg);
+        background-size: cover;
+        background-position: center right;
+    }
+
+    &__instructor--instructor3{
+        background-image: unset;
+        background-image: url(../img/maestro3.jpeg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__informacion{
+        display: flex;
+        align-items: center;
+    }
+
+    &__texto{
+        margin-left: 2rem;
+    }
+
+    &__profesor,
+    &__costo,
+    &__duracion{
+        margin: 0;
+    }
+}

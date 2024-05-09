@@ -1,0 +1,36 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.quienes-somos{
+    padding: 5rem 0;
+
+    &__heading{
+        text-align: center;
+        font-family: v.$fuente_secundaria;
+        color: v.$secundario;
+        font-size: 3.8rem
+    }
+
+    &__grid{
+        @include m.tablet { 
+            @include m.grid(2,2rem);
+            align-items: center;
+        }
+    }
+
+    &__imagen{
+        width: 100%;
+        margin-bottom: 5rem;
+
+        &:nth-child(3){
+            margin-bottom: 0;
+        }
+    }
+
+    &__texto{
+        text-align: center;
+        height: 100%;
+    }
+
+   
+}

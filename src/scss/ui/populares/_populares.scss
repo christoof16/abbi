@@ -1,0 +1,67 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.populares{
+    background-color: v.$grisClaro;
+    overflow: hidden;
+
+    &__heading{
+        text-align: center;
+
+        span{
+            font-family: v.$fuente_secundaria;
+            font-weight: 400;
+            color: v.$secundario;
+            font-size: 4.6rem;
+        }
+    }
+
+    &__cursos{
+        overflow: hidden;
+        width: 30rem;
+        margin: 0 auto;
+
+        @include m.tablet { 
+            width: 50rem;
+        }
+    }
+
+    &__curso{
+        height: 100%;
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        transition-property: transform;
+    }
+
+
+    .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal{
+        margin-bottom: -20rem;
+
+        @include m.tablet { 
+            margin-bottom: -5rem;
+        }
+
+        @include m.desktop { 
+            margin-bottom: -35rem;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        background-color: darken(v.$negro, 10%);
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: v.$negro;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev{
+        color: v.$secundario;
+        margin-top: 450px;
+
+        @include m.tablet { 
+            margin-top: 400px;
+        }
+    }
+}

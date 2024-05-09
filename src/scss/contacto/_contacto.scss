@@ -1,0 +1,111 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario{
+    padding: 5rem 0;
+    background-color: lighten(v.$primario, 25%);
+
+    &__heading{
+        text-align: center;
+        font-size: 3.6rem;
+        color: v.$primario;
+
+        span{
+            font-family: v.$fuente_secundaria;
+            color: v.$secundario;
+        }
+    }
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 40rem;
+        margin: 0 auto;
+
+        @include m.tablet { 
+            max-width: 60rem;
+        }
+
+        input[type="text"]{
+            margin: 1rem;
+            padding: 1rem;
+            width: 40rem;
+            border: 2px solid v.$primario;
+
+            @include m.tablet { 
+                width: 50rem;
+            }
+        }
+    }
+
+    &__nombre,
+    &__asunto,
+    &__mensaje{
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+    }
+
+
+    &__label{
+        width: 8rem;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        color: v.$secundario;
+    }
+
+    &__label--textarea{
+        display: block;
+        margin-bottom: 15rem;
+    }
+
+    &__input{
+        box-shadow: 0px 0px 0px 2px rgb(49 110 160/ .15);
+        &:focus-visible{
+            outline: 2px solid v.$primario;
+            border: none;
+        }
+
+        &::placeholder{
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: lighten(v.$secundario, 25%);
+        }
+    }
+
+    &__textarea{
+        box-shadow: 0px 0px 0px 2px rgb(49 110 160/ .15);
+        margin: 1rem 2rem;
+        padding: 1rem;
+        resize: none;
+        width: 40rem;
+        height: 20rem;
+        border: 2px solid v.$primario;
+
+        @include m.tablet { 
+            width: 50rem;
+        }
+
+        &:focus-visible{
+            outline: 2px solid v.$primario;
+            border: none;
+        }
+    }
+
+    input[type="submit"]{
+        width: 20rem;
+        padding: 2rem 0;
+        background-color: v.$primario;
+        border: none;
+        color: v.$blanco;
+        cursor: pointer;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        &:hover{
+            background-color: v.$secundario;
+        }
+    }
+
+}

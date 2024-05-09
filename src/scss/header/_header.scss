@@ -1,0 +1,52 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header{
+    padding: 2rem 0 0 0;
+    
+    &__grid{
+    
+        @include m.tablet { 
+            @include m.grid(2,2rem);
+            align-items: center;
+        }
+    }
+
+    &__logo{
+        margin: 0 auto;
+        background-image: url(../img/logo.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 15rem;
+        height: 15rem;
+        filter: brightness(1.1);
+        mix-blend-mode: multiply;
+
+        @include m.tablet {
+            margin: 0; 
+            width: 25rem;
+            height: 25rem;
+        }
+    }
+
+    &__redes-sociales{
+        text-align: center;
+    
+    }
+
+    &__enlaces{
+        padding-top: 1rem;
+    }
+
+    &__enlace{
+        width: 5rem;
+        height: 5rem;
+        padding-left: 1rem;
+
+        @include m.tablet { 
+            width: 8rem;
+            height: 8rem;
+        }
+    }
+
+}

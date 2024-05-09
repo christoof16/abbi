@@ -1,0 +1,45 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.beneficios{
+
+    &__heading{
+        text-align: center;
+
+        span{
+            font-family: v.$fuente_secundaria;
+            color: v.$secundario;
+        }
+    }
+
+    &__grid{
+        @include m.grid(1,2rem);
+
+        @include m.tablet { 
+            @include m.grid(3,4rem);
+        }
+    }
+}
+
+.beneficio{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__imagen{
+        width: 12rem;
+        height: 12rem;
+    }
+
+    &__texto{
+        margin: 0;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: v.$primario;
+    }
+
+    &__lorem{
+        font-size: 1.6rem;
+    }
+}
